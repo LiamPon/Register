@@ -1,0 +1,95 @@
+﻿@{
+    Layout = "~/Views/Shared/_RegistrationLayout.cshtml";
+}
+
+
+<div class="row center" >
+    <div class="col s2 m2 l2" ></div>
+    <div class="col s8 m8 l8">
+        <div class="row">
+            <div class="col s12 m12 l12" ng-init="loadEmployee()">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="firstName" type="text" class="validate" ng-model="firstName">
+                                        <label for="firstName">First Name</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="lastName" type="text" class="validate" ng-model="lastName">
+                                        <label for="lastName">Last Name</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">home</i>
+                                        <input id="address" type="text" class="validate" ng-model="address">
+                                        <label for="address">Address</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">phone</i>
+                                        <input id="phoneNumber" type="tel" class="validate" ng-model="phoneNumber">
+                                        <label for="phoneNumber">Phone</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 m6 l6">
+                                            <button class="btn-large waves-effect waves-light col s12 m12 l12 card-panel green" type="submit" name="action" ng-click="submitFunc2()">
+                                                Submit
+                                                <i class="material-icons left">send</i>
+                                            </button>
+                                        </div>
+                                        <div class="col s12 m6 l6">
+                                            <button class="btn-large waves-effect waves-light col s12 m12 l12 card-panel red" type="submit" name="action"  ng-click="cleanFunc()">
+                                                Cancel
+                                                <i class="material-icons left">cancel</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">home</i>
+                                            <input id="username" type="text" class="validate" ng-model="loginUsername">
+                                            <label for="username">Username</label>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">phone</i>
+                                            <input id="password" type="text" class="validate" ng-model="loginPassword">
+                                            <label for="password">Password</label>
+                                        </div>
+                                        <div class="col s12 m12 l12">
+                                            <button class="btn-large waves-effect waves-light col s12 m12 l12 card-panel green" type="submit" name="action" ng-click="login()">
+                                                Log in
+                                                <i class="material-icons left">send</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m12 l12">
+            <table id="myTable" class="display">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in emptable">
+                        <td>{{employee.emp.fName}}</td>
+                        <td>{{employee.emp.lName}}</td>
+                        <td>{{employee.dept.deptName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col s2 m2 l2"></div>
+</div>
